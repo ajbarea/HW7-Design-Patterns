@@ -1,0 +1,30 @@
+@startuml
+interface Shape {
+    + print(): void
+    + area(): double
+    + perimeter(): double
+}
+class Square {
+    + print(): void
+    + area(): double
+    + perimeter(): double
+}
+abstract class ShapeFactory {
+    + createShape(): Shape
+}
+class SquareFactory {
+    + createShape(): Shape
+}
+class Singleton {
+    - instance: Singleton
+    + getInstance(): Singleton
+    + print(): void
+}
+class Main {
+    + main(args: String[]): void
+}
+Shape <|-- Square
+ShapeFactory <|-- SquareFactory
+ShapeFactory o-- Shape
+SquareFactory o-- Square
+@enduml
