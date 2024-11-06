@@ -1,4 +1,4 @@
-# Homework 7 - Design Patterns
+# SWEN-746 - Design Patterns
 
 **Author:** AJ Barea  
 **Course:** SWEN-746 Model-Driven Development  
