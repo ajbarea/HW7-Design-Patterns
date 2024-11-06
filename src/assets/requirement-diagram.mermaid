@@ -1,0 +1,49 @@
+requirementDiagram
+
+    requirement Factory Method Pattern {
+        id: 1
+        text: Implement the Factory Method design pattern for shape creation
+        risk: low
+        verifymethod: inspection
+    }
+
+    requirement Shape Interface {
+        id: 2
+        text: Define an interface with methods print(), area(), and perimeter()
+        risk: low
+        verifymethod: inspection
+    }
+
+    requirement ShapeFactory Abstract {
+        id: 3
+        text: Create an abstract class declaring factory method createShape()
+        risk: low
+        verifymethod: inspection
+    }
+
+    requirement Square Class {
+        id: 4
+        text: Implement Square class that implements Shape interface
+        risk: low
+        verifymethod: test
+    }
+
+    requirement SquareFactory Class {
+        id: 5
+        text: Implement SquareFactory class that extends ShapeFactory and creates Square objects
+        risk: low
+        verifymethod: test
+    }
+
+    Factory Method Pattern -contains-> Shape Interface
+    Factory Method Pattern -contains-> ShapeFactory Abstract
+    Factory Method Pattern -contains-> Square Class
+    Factory Method Pattern -contains-> SquareFactory Class
+    
+    ShapeFactory Abstract -refines-> Shape Interface
+    Square Class -satisfies-> Shape Interface
+    
+    SquareFactory Class -satisfies-> ShapeFactory Abstract
+    SquareFactory Class -traces-> Square Class
+    SquareFactory Class -traces-> Factory Method Pattern
+    SquareFactory Class -traces-> Shape Interface
